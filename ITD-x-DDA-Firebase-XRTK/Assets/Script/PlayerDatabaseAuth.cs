@@ -85,7 +85,7 @@ public class PlayerDatabaseAuth : MonoBehaviour
 
     public void RegisterFunction()
     {
-        // Called the function
+        // Called the functionW
         StartCoroutine(RegisterLogic(ResEmail.text.Trim(), ResPassword.text.Trim(), ResUsername.text.Trim()));
     }
 

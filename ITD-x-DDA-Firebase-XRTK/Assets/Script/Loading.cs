@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Loading : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        StartCoroutine(Load());
     }
-
-    // Update is called once per frame
-    void Update()
+    IEnumerator Load()
     {
-        
+        yield return new WaitForSeconds(5f);
+
+        SceneManager.LoadScene(2);
     }
 }

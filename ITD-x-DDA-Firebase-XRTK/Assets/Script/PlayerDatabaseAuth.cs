@@ -17,7 +17,7 @@ public class PlayerDatabaseAuth : MonoBehaviour
 {
     // Database Reference
     DatabaseReference db;
-    DatabaseReference accounts;
+    DatabaseReference PlayerAccounts;
 
     // Firebase Auth
     [Header("Firebase Auth")]
@@ -26,7 +26,7 @@ public class PlayerDatabaseAuth : MonoBehaviour
 
     // Logic Objects
     [Header("Login")]
-    public TMP_InputField LoginUsername;
+    public TMP_InputField LoginEmail;
     public TMP_InputField LoginPassword;
     public TMP_Text ErrorMSG;
     public Button Login;
@@ -35,7 +35,6 @@ public class PlayerDatabaseAuth : MonoBehaviour
     [Header("Register")]
     public TMP_InputField ResEmail;
     public TMP_InputField ResPassword;
-    public TMP_InputField ResUsername;
     public TMP_Text AlertDia;
     public Button Create;
 
@@ -47,7 +46,7 @@ public class PlayerDatabaseAuth : MonoBehaviour
         db = FirebaseDatabase.DefaultInstance.RootReference;
 
         // Account Database
-        accounts = FirebaseDatabase.DefaultInstance.GetReference("accounts");
+        PlayerAccounts = FirebaseDatabase.DefaultInstance.GetReference("PlayerAccounts");
 
         // Create Method Called Here
         //Button CreateAcc = Create.GetComponent<Button>();
@@ -61,9 +60,9 @@ public class PlayerDatabaseAuth : MonoBehaviour
 
 
     // Create New Accounts into Firebase Database
-    private void CreateAccounts(string uuid, string email, string password, string username)
+    private void CreateAccounts(string uuid, string email, string password)
     {
-        PlayerClass res = new PlayerClass(email, password, username);
+        PlayerClass res = new PlayerClass(email, password);
 
         string checkChar = res.password;
 
@@ -73,20 +72,20 @@ public class PlayerDatabaseAuth : MonoBehaviour
         }
         else
         {
-            accounts.Child(uuid).SetRawJsonValueAsync(res.PlayerClassToJson());
+            PlayerAccounts.Child(uuid).SetRawJsonValueAsync(res.PlayerClassToJson());
         }
     }
 
     public void LoginFunction()
     {
         // Called the function 
-        StartCoroutine(LoginLogic(LoginUsername.text.Trim(), LoginPassword.text.Trim()));
+        StartCoroutine(LoginLogic(LoginEmail.text.Trim(), LoginPassword.text.Trim()));
     }
 
     public void RegisterFunction()
     {
-        // Called the functionW
-        StartCoroutine(RegisterLogic(ResEmail.text.Trim(), ResPassword.text.Trim(), ResUsername.text.Trim()));
+        // Called the function
+        StartCoroutine(RegisterLogic(ResEmail.text.Trim(), ResPassword.text.Trim()));
     }
 
     // Login Logic
@@ -138,12 +137,12 @@ public class PlayerDatabaseAuth : MonoBehaviour
         }
     }
 
-    private IEnumerator RegisterLogic(string ResEmail, string ResPWD, string ResUser)
+    private IEnumerator RegisterLogic(string ResEmail, string ResPWD)
     {
-        if (ResUser == "")
+        if (ResEmail == "")
         {
             // If Email field is blank promt a warning
-            AlertDia.text = "Missing Username";
+            AlertDia.text = "Missing Email";
         }
         else if (ResPWD == "")
         {
@@ -152,7 +151,7 @@ public class PlayerDatabaseAuth : MonoBehaviour
         else
         {
             // Call Firebase auth sign in function pass the email and pwd
-            var ResFunc = auth.CreateUserWithEmailAndPasswordAsync(ResUser, ResPWD);
+            var ResFunc = auth.CreateUserWithEmailAndPasswordAsync(ResEmail, ResPWD);
 
             yield return new WaitUntil(predicate: () => ResFunc.IsCompleted);
 
@@ -188,12 +187,12 @@ public class PlayerDatabaseAuth : MonoBehaviour
                 User = ResFunc.Result;
 
                 // At the same time able to store User Stats into FireBase with UUID
-                CreateAccounts(User.UserId, ResEmail.Trim(), ResPWD.Trim(), ResUser.Trim());
+                CreateAccounts(User.UserId, ResEmail.Trim(), ResPWD.Trim());
 
                 if (User != null)
                 {
                     // Create User Profile
-                    UserProfile profile = new UserProfile { DisplayName = ResUser };
+                    UserProfile profile = new UserProfile { DisplayName = ResEmail };
 
                     // Call the Firebase auth update user profile
                     var ProfileTask = User.UpdateUserProfileAsync(profile);

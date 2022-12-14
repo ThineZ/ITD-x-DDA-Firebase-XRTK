@@ -10,8 +10,7 @@ public class ItemChecker : MonoBehaviour
     public TMP_Text ItemFoundUpdate;
 
     XRDirectInteractor DirectInteractor;
-    public string[] ItemTag;
-    public static int CountItems;
+    public string ItemTag;
 
     private void Awake()
     {
@@ -20,21 +19,11 @@ public class ItemChecker : MonoBehaviour
 
     public void isGrab()
     {
-        if (DirectInteractor.interactablesSelected.Count > 0 && DirectInteractor.interactablesSelected[0].transform.CompareTag(ItemTag[0]))
+        if (DirectInteractor.interactablesSelected.Count > 0 && DirectInteractor.interactablesSelected[0].transform.CompareTag(ItemTag))
         {
-            if (CountItems > 0)
-            {
-                CountItems++;
+            Debug.Log("Item Found");
 
-                Debug.Log("Item Found");
-
-                ItemFoundUpdate.text = CountItems.ToString();
-
-                if (ItemFoundUpdate.text == "1")
-                {
-                    Debug.Log("Item Existed");
-                }
-            }
+            ItemFoundUpdate.text = "1";
         }
     }
 }

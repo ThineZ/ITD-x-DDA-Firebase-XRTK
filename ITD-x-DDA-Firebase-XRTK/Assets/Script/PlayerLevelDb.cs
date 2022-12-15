@@ -66,8 +66,9 @@ public class PlayerLevelDb : MonoBehaviour
                     PlayerStatsClass ps = JsonUtility.FromJson<PlayerStatsClass>(PlayerStatsSnapshot.GetRawJsonValue());
                     Debug.Log(ps.PlayerStatsToJson());
 
-                    Debug.Log(Time);
-                    Debug.Log(ps.TimeTaken);
+                    Debug.Log(Time + "Time");
+                    Debug.Log(ps.TimeTaken + "Time Taken");
+                    Debug.Log(ps.LastTimeTaken + "Last Time Taken");
 
                     // Store Time of Player Clear Level
                     if (Time > ps.TimeTaken)
@@ -82,7 +83,7 @@ public class PlayerLevelDb : MonoBehaviour
                     }
 
                     // Update overide
-                    DBPlayerStates.Child(uuid).Child("Level 1").SetRawJsonValueAsync(ps.PlayerStatsToJson());
+                    DBPlayerStates.Child(uuid).SetRawJsonValueAsync(ps.PlayerStatsToJson());
                 }
                 else
                 {
@@ -91,7 +92,7 @@ public class PlayerLevelDb : MonoBehaviour
                     PlayerStatsClass ps = new PlayerStatsClass(uuid, Time, LastTimeTaken);
 
                     // Create new entries into firebase
-                    DBPlayerStates.Child(uuid).Child("Level 1").SetRawJsonValueAsync(ps.PlayerStatsToJson());
+                    DBPlayerStates.Child(uuid).SetRawJsonValueAsync(ps.PlayerStatsToJson());
                 }
             }
 

@@ -6684,7 +6684,7 @@ MonoBehaviour:
   correctTag: GreenKeyCard
   anim: {fileID: 3609703841154105980}
   TimeUI: {fileID: 297760253}
-  LevelDB: {fileID: 0}
+  LevelDB: {fileID: 611730978}
   isPlayerStatesUpdated: 0
 --- !u!135 &266968697
 SphereCollider:
@@ -17315,19 +17315,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ItemChecker, Assembly-CSharp
-        m_MethodName: isGrab
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -19880,19 +19868,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ItemChecker, Assembly-CSharp
-        m_MethodName: isGrab
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -29297,7 +29273,7 @@ MonoBehaviour:
   correctTag: RedKeyCard
   anim: {fileID: 3609703841154105980}
   TimeUI: {fileID: 297760253}
-  LevelDB: {fileID: 0}
+  LevelDB: {fileID: 611730978}
   isPlayerStatesUpdated: 0
 --- !u!114 &1078199510
 MonoBehaviour:
@@ -53717,7 +53693,7 @@ MonoBehaviour:
   correctTag: BlueKeyCard
   anim: {fileID: 3609703841154105980}
   TimeUI: {fileID: 297760253}
-  LevelDB: {fileID: 0}
+  LevelDB: {fileID: 611730978}
   isPlayerStatesUpdated: 0
 --- !u!114 &1942520481
 MonoBehaviour:
@@ -58764,19 +58740,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ItemChecker, Assembly-CSharp
-        m_MethodName: isGrab
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []

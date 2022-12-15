@@ -70,4 +70,3 @@ public class ColorSocket : MonoBehaviour
         LevelDB.UpdatePlayerStats(auth.CurrentUser.UserId, Time, LastTimeTaken);
     }
 }
-

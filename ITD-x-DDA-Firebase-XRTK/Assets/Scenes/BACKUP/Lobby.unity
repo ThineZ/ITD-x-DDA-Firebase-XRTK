@@ -11197,7 +11197,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1470657242}
+      - m_Target: {fileID: 1470657244}
         m_TargetAssemblyTypeName: PlayerDatabaseAuth, Assembly-CSharp
         m_MethodName: LoginFunction
         m_Mode: 1
@@ -51670,7 +51670,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1470657242}
+      - m_Target: {fileID: 1470657244}
         m_TargetAssemblyTypeName: PlayerDatabaseAuth, Assembly-CSharp
         m_MethodName: RegisterFunction
         m_Mode: 1
@@ -52313,7 +52313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1470657243}
-  - component: {fileID: 1470657242}
+  - component: {fileID: 1470657244}
   m_Layer: 0
   m_Name: LoginAuthManager
   m_TagString: Untagged
@@ -52321,26 +52321,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1470657242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1470657241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e25536d3574c8c44cabb0e0587bc9904, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LoginEmail: {fileID: 442518717}
-  LoginPassword: {fileID: 592786962}
-  ErrorMSG: {fileID: 1223381369}
-  Login: {fileID: 293514439}
-  ResEmail: {fileID: 91332830}
-  ResPassword: {fileID: 40879954}
-  AlertDia: {fileID: 1744627893}
-  Create: {fileID: 1438150705}
 --- !u!4 &1470657243
 Transform:
   m_ObjectHideFlags: 0
@@ -52356,6 +52336,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1470657244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470657241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27fca202939bd014d9341e117dae9149, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoginEmail: {fileID: 442518717}
+  LoginPassword: {fileID: 592786962}
+  ErrorMSG: {fileID: 1223381369}
+  Login: {fileID: 293514439}
+  ResEmail: {fileID: 91332830}
+  ResPassword: {fileID: 40879954}
+  AlertDia: {fileID: 1744627893}
+  Create: {fileID: 1438150705}
 --- !u!1 &1472460582
 GameObject:
   m_ObjectHideFlags: 0

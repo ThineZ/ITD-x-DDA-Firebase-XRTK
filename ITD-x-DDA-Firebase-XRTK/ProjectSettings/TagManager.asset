@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Keycard
-  - Grab
-  - Door
+  - RedKeyCard
+  - BlueKeyCard
+  - GreenKeyCard
   layers:
   - Default
   - TransparentFX

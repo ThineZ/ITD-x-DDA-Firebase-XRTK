@@ -43,7 +43,7 @@ public class PlayerLevelDb : MonoBehaviour
         DBPlayerStates = FirebaseDatabase.DefaultInstance.GetReference("PlayerStats");
     }
 
-    public void UpdatePlayerStats(string uuid, int Time, int ItemFound)
+    public void UpdatePlayerStats(string uuid, int Time, int LastTimeTaken)
     {
         Query playerQuery = DBPlayerStates.Child(uuid);
 
@@ -67,9 +67,7 @@ public class PlayerLevelDb : MonoBehaviour
                     Debug.Log(ps.PlayerStatsToJson());
 
                     Debug.Log(Time);
-                    Debug.Log(ItemFound);
                     Debug.Log(ps.TimeTaken);
-                    Debug.Log(ps.ItemFound);
 
                     // Store Time of Player Clear Level
                     if (Time > ps.TimeTaken)
@@ -77,10 +75,10 @@ public class PlayerLevelDb : MonoBehaviour
                         ps.TimeTaken = Time;
                     }
 
-                    // Check if item found Update the Label
-                    if (ItemFound < ps.ItemFound)
+                    // Store Current Time Score
+                    if (Time < ps.LastTimeTaken || Time > ps.LastTimeTaken)
                     {
-                        ps.ItemFound = ItemFound;
+                        ps.LastTimeTaken = Time;
                     }
 
                     // Update overide
@@ -90,10 +88,10 @@ public class PlayerLevelDb : MonoBehaviour
                 {
                     // Create Player Stats
                     // If there is no exist data, it is our first time player 
-                    PlayerStatsClass ps = new PlayerStatsClass(uuid, Time, ItemFound);
+                    PlayerStatsClass ps = new PlayerStatsClass(uuid, Time, LastTimeTaken);
 
                     // Create new entries into firebase
-                    DBPlayerStates.Child(uuid).SetRawJsonValueAsync(ps.PlayerStatsToJson());
+                    DBPlayerStates.Child(uuid).Child("Level 1").SetRawJsonValueAsync(ps.PlayerStatsToJson());
                 }
             }
 

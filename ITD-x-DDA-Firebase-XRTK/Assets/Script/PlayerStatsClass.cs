@@ -6,18 +6,18 @@ public class PlayerStatsClass
     // Objects
     public string UserId;
     public int TimeTaken;
-    public int ItemFound;
+    public int LastTimeTaken;
     public long updateOn;
 
     // Empty Construstor
     public PlayerStatsClass() { }
 
     // Contrustor
-    public PlayerStatsClass(string UserId, int TimeTaken, int ItemFound)
+    public PlayerStatsClass(string UserId, int TimeTaken, int LastTimeTaken)
     {
         this.UserId = UserId;
         this.TimeTaken = TimeTaken;
-        this.ItemFound = ItemFound;
+        this.LastTimeTaken = LastTimeTaken;
 
         var timestamp = this.GetTimeUnix();
         this.updateOn = timestamp;

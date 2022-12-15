@@ -21,9 +21,9 @@ public class ItemChecker : MonoBehaviour
     {
         if (DirectInteractor.interactablesSelected.Count > 0 && DirectInteractor.interactablesSelected[0].transform.CompareTag(ItemTag))
         {
-            Debug.Log("Item Found");
+            Debug.Log(ItemTag);
 
-            ItemFoundUpdate.text = "1";
+            ItemFoundUpdate.text += "1";
         }
     }
 }

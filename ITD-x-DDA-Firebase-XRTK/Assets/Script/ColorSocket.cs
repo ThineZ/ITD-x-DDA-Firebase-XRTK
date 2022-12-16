@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.Animations;
+using UnityEngine.SceneManagement;
 
 using Firebase;
 using Firebase.Auth;
@@ -58,6 +59,9 @@ public class ColorSocket : MonoBehaviour
                 {
                     anim.SetBool("Open", true);
                     UpdatePlayerStates(int.Parse(this.TimeUI.text), int.Parse(this.TimeUI.text));
+
+                    // Load to End Scence
+                    SceneManager.LoadScene(3);
                 }
                 isPlayerStatesUpdated = true;
             }

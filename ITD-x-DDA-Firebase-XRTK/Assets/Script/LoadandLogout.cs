@@ -13,11 +13,8 @@ public class LoadandLogout : MonoBehaviour
     private void Awake()
     {
         auth = FirebaseAuth.DefaultInstance;
-    }
-
-    private void Start()
-    {
         LogoutToLobby();
+        StartCoroutine(Load());
     }
 
     IEnumerator Load()
@@ -33,8 +30,6 @@ public class LoadandLogout : MonoBehaviour
         {
             Debug.LogFormat("Auth user {0} {1}", auth.CurrentUser.UserId, auth.CurrentUser.Email);
             auth.SignOut();
-
-            StartCoroutine(Load());
         }
     }
 }

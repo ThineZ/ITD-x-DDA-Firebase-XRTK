@@ -133,7 +133,7 @@ public class PlayerDatabaseAuth : MonoBehaviour
             ErrorMSG.text = "";
 
             // Load to Play Scene
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
 

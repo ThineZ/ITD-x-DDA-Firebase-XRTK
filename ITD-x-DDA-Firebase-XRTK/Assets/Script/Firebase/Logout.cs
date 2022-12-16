@@ -28,7 +28,7 @@ public class Logout : MonoBehaviour
             Debug.LogFormat("Auth user {0} {1}", auth.CurrentUser.UserId, auth.CurrentUser.Email);
             auth.SignOut();
 
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(0);
         }
     }
 }

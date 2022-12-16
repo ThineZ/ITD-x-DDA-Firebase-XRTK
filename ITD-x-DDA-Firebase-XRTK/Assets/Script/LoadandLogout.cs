@@ -20,7 +20,7 @@ public class LoadandLogout : MonoBehaviour
     IEnumerator Load()
     {
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
     // Logout Logic 

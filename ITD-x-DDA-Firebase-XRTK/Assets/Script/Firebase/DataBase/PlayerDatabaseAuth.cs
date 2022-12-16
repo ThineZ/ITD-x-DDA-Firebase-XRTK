@@ -62,7 +62,7 @@ public class PlayerDatabaseAuth : MonoBehaviour
     // Create New Accounts into Firebase Database
     private void CreateAccounts(string uuid, string email, string password)
     {
-        PlayerClass res = new PlayerClass(email, password);
+        PlayerClass res = new PlayerClass(email, password, uuid);
 
         string checkChar = res.password;
 

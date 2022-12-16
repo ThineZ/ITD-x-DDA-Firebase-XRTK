@@ -8,6 +8,7 @@ public class PlayerClass
     // Objects
     public string email;
     public string password;
+    public string uuid;
 
     // Empty Constructor
     public PlayerClass()
@@ -15,10 +16,11 @@ public class PlayerClass
     }
 
     // Account Storage Constructor
-    public PlayerClass(string email, string password)
+    public PlayerClass(string email, string password, string uuid)
     {
         this.email = email;
         this.password = password;
+        this.uuid = uuid;
     }
 
     // Helper Function

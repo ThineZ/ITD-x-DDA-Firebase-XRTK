@@ -60,12 +60,19 @@ public class ColorSocket : MonoBehaviour
                     anim.SetBool("Open", true);
                     UpdatePlayerStates(int.Parse(this.TimeUI.text), int.Parse(this.TimeUI.text));
 
-                    // Load to End Scence
-                    SceneManager.LoadScene(3);
+                    StartCoroutine(LoadWait());
                 }
                 isPlayerStatesUpdated = true;
             }
         }
+    }
+
+    IEnumerator LoadWait()
+    {
+        yield return new WaitForSeconds(3f);
+
+        // Load to End Scence
+        SceneManager.LoadScene(3);
     }
 
     // Linked Function From Level DB to Update Firebase

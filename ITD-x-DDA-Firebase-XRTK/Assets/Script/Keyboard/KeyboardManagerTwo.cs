@@ -1,15 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.UI;
 using TMPro;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
-using JetBrains.Annotations;
-using UnityEditor.XR.Management;
-using Oculus.Interaction;
 
 public class KeyboardManagerTwo : MonoBehaviour
 {
